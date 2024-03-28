@@ -28,19 +28,35 @@ public class Arrays {
 		return res;
 	}
 	public static <T> void bubbleSort(T[] array, Comparator<T> comp) {
-        boolean needNextPass = true;
-
-        for (int k = 1; k < array.length && needNextPass; k++) {
-            needNextPass = false;
-            for (int i = 0; i < array.length - k; i++) {
-                if (comp.compare(array[i], array[i + 1]) > 0) {
-                    T temp = array[i];
-                    array[i] = array[i + 1];
-                    array[i + 1] = temp;
-
-                    needNextPass = true; 
-                }
-            }
+        boolean isUsorted = true;
+        int length = array.length;
+        while(isUsorted) {
+        	length--;
+        	isUsorted = false;
+        	for(int i = 0; i < length; i++) {
+        		if(comp.compare(array[i], array[i + 1]) > 0) {
+        			swap(array, i, i + 1);
+        			isUsorted = true;
+        		}
+        	}
         }
-    }
+     }
+
+	private static <T> void swap(T[] array, int i, int j) {
+		T tmp = array[i];
+		array[i] = array[j];
+		array[j] =tmp;
+	}
+	public static <T> int binarySearch(T[] array, T key, Comparator<T> comp) {
+		//TODO
+		//left index = 0
+		//right index = array.length - 1
+		// middle (left + right) / 2
+		//left part - left index, right index = middle - 1
+		// right part - left index = middle + 1, right index
+		//while left <= right
+		//returns exactly what the standard binarySearch does
+		//if there are several equaled elements no guarantee that being returned index is one to first occurrence
+		return -1;
+	}
 }

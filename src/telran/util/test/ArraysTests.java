@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import telran.util.Arrays;
 
 class ArraysTests {
-	Integer[] numbers = {100, -3, 23, 4, 8, 41, 56, -7, null};
+	Integer[] numbers = {100, -3, 23, 4, 8, 41, 56, -7};
 	String[] strings = {"abc", "lmn", "123", null, "a"};
 	String[] stringsMin = {"abc", "lmn", "123", "y"};
 	@Test
